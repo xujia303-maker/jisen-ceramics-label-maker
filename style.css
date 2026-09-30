@@ -1,0 +1,66 @@
+:root{--paper:#f7f3e9;--ink:#243b34;--brown:#665747;--red:#a14d3b;--line:#d7cec0;--ui:#f3f0e9}*{box-sizing:border-box}body{margin:0;color:var(--ink);background:#e9e7e0;font-family:"Microsoft YaHei","PingFang SC",sans-serif;font-size:13px}button,input,select{font:inherit}button{border:1px solid #b9b2a6;background:#fbfaf6;color:var(--ink);border-radius:3px;padding:8px 11px;cursor:pointer;white-space:nowrap}button:hover{border-color:var(--ink)}button:disabled{opacity:.4;cursor:default}.primary{background:var(--ink);border-color:var(--ink);color:#fff}.danger{color:#9b3f32}.topbar{min-height:96px;display:flex;justify-content:space-between;align-items:end;padding:21px 30px;background:#20382f;color:#f6f1e8;gap:20px}.topbar h1{font-family:Georgia,serif;letter-spacing:.12em;font-weight:normal;font-size:19px;margin:6px 0}.topbar p{margin:0;color:#c9c6b9}.eyebrow{font-size:10px;letter-spacing:.19em;color:#a25948;font-weight:bold}.topbar .eyebrow{color:#c7a798}.topbar nav{display:flex;gap:5px}.topbar nav button{background:transparent;color:#e9e5db;border-color:#72847a}.topbar nav button.active{background:var(--paper);color:var(--ink)}.workspace{display:grid;grid-template-columns:minmax(510px,45%) minmax(0,55%);gap:16px;padding:16px;align-items:start}.editor-panel,.preview-panel,.settings-view{background:#fbfaf6;border:1px solid #d8d3c9;padding:18px;min-width:0}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:15px}.section-heading h2{font-family:"Songti SC","SimSun",serif;font-weight:normal;font-size:23px;margin:5px 0 0}.section-heading small{font:12px "Microsoft YaHei",sans-serif;color:#777}.section-heading>span,#saveStatus{color:#877c6d;font-size:11px}.toolbar,.data-actions,.preview-controls{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.hint,.small-note{color:#776f64;line-height:1.6}.small-note{font-size:11px}.table-scroll{overflow:auto;max-height:calc(100vh - 300px);border:1px solid #d6d1c8;margin-top:15px}table{border-collapse:collapse;min-width:1600px;width:100%;background:#fff}th,td{padding:7px 6px;border-bottom:1px solid #e5e0d7;text-align:left;vertical-align:top}th{position:sticky;top:0;background:#eeeae0;color:#655c50;z-index:2;font-size:11px;white-space:nowrap}tbody tr:nth-child(even){background:#faf9f5}td select,td input[type=text],td input[type=number]{width:100%;min-width:80px;border:1px solid #d3cec4;background:#fff;padding:6px 5px;border-radius:2px;color:#2e3d34}td .template-select{min-width:125px}td .custom-input{margin-top:4px}td .sku-input{min-width:85px}td .price-input{min-width:68px}td .row-actions{display:flex;gap:4px}td .row-actions button{padding:5px 7px;font-size:11px}.technique-picker{position:relative;min-width:120px}.technique-picker summary{border:1px solid #d3cec4;background:#fff;padding:7px 5px;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:145px}.technique-menu{position:absolute;z-index:5;background:#fff;border:1px solid #b9b2a6;box-shadow:0 3px 8px #0002;padding:8px;width:180px;max-height:240px;overflow:auto}.technique-menu label{display:block;white-space:nowrap;margin:5px 0}.technique-menu input[type=text]{min-width:0}.details-row td{background:#f3f0e9;padding:12px 18px}.detail-grid{display:grid;grid-template-columns:repeat(3,minmax(150px,1fr));gap:8px 15px;max-width:800px}.detail-grid label{display:flex;flex-direction:column;gap:4px;color:#655c50}.detail-grid .checks{display:flex;flex-wrap:wrap;gap:10px;grid-column:1/-1}.detail-grid .checks label{flex-direction:row;align-items:center}.data-actions{margin-top:14px}.preview-controls{margin-bottom:12px}.switch{display:flex;align-items:center;gap:4px;margin-left:5px;white-space:nowrap}.paper-viewport{overflow:auto;background:#e1ded6;padding:18px;display:flex;justify-content:center;max-height:calc(100vh - 280px)}.paper{width:210mm;height:297mm;min-width:210mm;min-height:297mm;background:#fff;display:grid;grid-template-columns:repeat(3,60mm);grid-template-rows:repeat(6,40mm);column-gap:5mm;row-gap:5mm;padding:13.5mm 10mm;box-shadow:0 2px 12px #0002}.label{width:60mm;height:40mm;background:var(--paper);border:.3mm solid #aa9f8d;position:relative;overflow:hidden;padding:3mm 3.5mm 2.6mm;display:flex;flex-direction:column;font-family:"Yu Mincho","Noto Serif CJK JP","Songti SC","SimSun",serif;color:var(--ink);print-color-adjust:exact;-webkit-print-color-adjust:exact}.paper.no-cuts .label{border-color:transparent}.label.standard{border-color:#c1b7a8}.paper.no-cuts .label.standard{border-color:transparent}.label.select{border-top:.65mm solid var(--ink)}.label.archive{border-top:.75mm solid var(--red)}.label .brand{font-size:5.4pt;letter-spacing:.13em;color:var(--brown);line-height:1.1;margin-bottom:1.2mm}.label .name{font-size:11.5pt;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:bold}.label .meta{font-size:7.3pt;line-height:1.42;margin-top:1.2mm;max-height:15mm;min-height:0;overflow:hidden}.label .meta div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.label.dense .meta{font-size:6pt;line-height:1.2}.label .mark{font:6.2pt Georgia,serif;letter-spacing:.12em;color:var(--brown);margin-top:auto;margin-bottom:.6mm}.label.archive .mark{color:var(--red)}.label .bottom{display:flex;align-items:end;justify-content:space-between;gap:2mm;border-top:.2mm solid #c7bdb0;padding-top:1mm;min-height:7mm}.label .sku{font:7pt Georgia,serif;letter-spacing:.04em;white-space:nowrap}.label .price{font:normal 14pt Georgia,"Yu Mincho",serif;white-space:nowrap;line-height:1}.label.archive .price{color:#7e392e}.print-button{margin-top:13px;width:100%;padding:11px}.print-help{margin-top:13px;border-top:1px solid #d7cec0;padding-top:12px;font-size:11px;color:#61594e;line-height:1.6}.print-help p{margin:4px 0}.settings-view{max-width:1100px;margin:16px auto}.settings-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.settings-card{border:1px solid #d8d0c4;background:#fff;padding:15px}.settings-card h3{font-family:"Songti SC","SimSun",serif;font-weight:normal;font-size:18px;margin:0 0 10px}.option-row{display:flex;gap:5px;margin:5px 0}.option-row input{flex:1;min-width:0;padding:6px;border:1px solid #cfc8bc}.option-row button{padding:5px 8px}.settings-card .add-option{display:flex;gap:5px;margin-top:10px}.settings-card .add-option input{flex:1;min-width:0;border:1px solid #cfc8bc;padding:6px}.settings-card .restore{margin-top:10px}.print-pages{display:none}[hidden]{display:none!important}@media(max-width:1150px){.workspace{grid-template-columns:1fr}.table-scroll{max-height:450px}.paper-viewport{justify-content:flex-start}}@media(max-width:650px){.topbar{padding:15px;align-items:start;flex-direction:column}.workspace{padding:8px}.editor-panel,.preview-panel{padding:12px}.settings-grid{grid-template-columns:1fr}.paper-viewport{padding:8px}}
+@page{size:A4 portrait;margin:0}@media print{html,body{width:210mm;margin:0;padding:0;background:#fff}.no-print{display:none!important}.print-pages{display:block!important}.print-pages .paper{width:210mm;height:297mm;min-width:210mm;min-height:297mm;box-shadow:none;break-after:page;page-break-after:always;break-inside:avoid;page-break-inside:avoid}.print-pages .paper:last-child{break-after:auto;page-break-after:auto}.label{break-inside:avoid;page-break-inside:avoid}}
+
+/* Pricing Assistant is screen-only; it does not alter the print sheet. */
+.suggestion{font-family:Georgia,serif;font-size:15px;color:var(--ink);white-space:nowrap;font-weight:bold}
+.research-needed{background:#f4e9df;border-color:#b4735a;color:#813e2e}
+.research-idle{color:#8b867f}
+.pricing-dialog{width:min(900px,calc(100vw - 32px));max-height:calc(100vh - 32px);overflow:auto;border:1px solid #b9ad9d;border-radius:4px;background:#fbfaf6;color:var(--ink);padding:22px;box-shadow:0 15px 45px #0003}
+.pricing-dialog::backdrop{background:#16241ccc}
+.dialog-head{display:flex;align-items:start;justify-content:space-between;gap:10px;border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:15px}
+.dialog-head h2{font:normal 24px "Songti SC","SimSun",serif;margin:5px 0}
+.dialog-head button{font-size:22px;line-height:1;padding:4px 9px}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pricing-grid h3,.research-result h3{font:normal 18px "Songti SC","SimSun",serif;border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 12px}
+.stacked{display:flex;flex-direction:column;gap:5px;margin:9px 0;color:#62594f}
+.stacked input,.stacked select,.stacked textarea,.pricing-settings textarea{border:1px solid #cfc8bc;border-radius:2px;background:#fff;padding:7px;color:var(--ink);width:100%;min-width:0}
+.factor-list{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:14px 0}
+.factor-row{display:flex;gap:6px;align-items:start;padding:7px;border:1px solid #e3ddd4;background:#fff;line-height:1.35}
+.factor-row small{display:block;color:#887a69;margin-top:3px}
+.flag-list{display:flex;flex-wrap:wrap;gap:7px 15px;margin:13px 0}
+.flag-list label{white-space:nowrap}
+.calculation{border:1px solid #cfc7ba;background:var(--paper);padding:13px}
+.calculation>div{display:flex;justify-content:space-between;gap:10px;padding:5px 0}
+.calculation .suggested{border-top:1px solid #b7ac9d;margin-top:5px;padding-top:10px;font-size:16px}
+.research-status{border-left:3px solid #a75b43;background:#f5eee7;padding:10px;margin:15px 0;line-height:1.5}
+.research-status ul{margin:6px 0 0;padding-left:19px}
+.final-adopt{border-top:1px solid var(--line);margin-top:18px;padding-top:11px}
+.final-adopt input{max-width:230px}
+.pricing-settings{margin-top:15px}
+.pricing-settings h4{font-weight:normal;font-size:14px;border-top:1px solid var(--line);padding-top:12px;margin-bottom:8px}
+.pricing-settings .config-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px 14px}
+.config-row,.factor-setting{display:flex;align-items:center;gap:8px;padding:3px 0}
+.config-row span{flex:1}
+.config-row input{width:82px;border:1px solid #cfc8bc;padding:6px}
+.factor-setting{grid-column:1/-1}
+.factor-setting>input[type=text]{flex:1;min-width:0;border:1px solid #cfc8bc;padding:6px}
+.factor-setting>input[type=number]{width:65px;border:1px solid #cfc8bc;padding:6px}
+.factor-setting label{white-space:nowrap}
+.pricing-settings .add-option input{max-width:180px}
+.research-dialog #researchPrompt{display:block;width:100%;min-height:220px;resize:vertical;border:1px solid #cfc8bc;background:#fff;padding:10px;color:var(--ink);font:12px/1.6 "Microsoft YaHei",sans-serif}
+.research-actions{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}
+.research-result{border-top:1px solid var(--line);margin-top:18px;padding-top:13px}
+.research-result>div{margin-bottom:10px}
+.research-result pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.5 "Microsoft YaHei",sans-serif;background:#f4f0e8;padding:8px;margin:4px 0}
+@media(max-width:720px){.pricing-grid,.factor-list,.pricing-settings .config-list{grid-template-columns:1fr}.pricing-dialog{padding:13px}}
+@media print{.pricing-dialog{display:none!important}}
+
+.image-dialog{width:min(960px,calc(100vw - 32px))}
+.image-preview{display:flex;align-items:center;gap:12px;background:#f2eee5;border:1px solid var(--line);padding:10px;margin:10px 0}
+.image-preview img{display:block;max-width:min(360px,55vw);max-height:270px;object-fit:contain;background:#fff}
+.image-preview span{overflow-wrap:anywhere;color:#63594c}
+.image-results{border-top:1px solid var(--line);margin-top:16px;padding-top:12px}
+.image-results h3{font:normal 19px "Songti SC","SimSun",serif;margin:0 0 7px}
+.image-field-list{border:1px solid var(--line);margin:10px 0 14px}
+.image-field-row{display:grid;grid-template-columns:minmax(170px,1.2fr) minmax(150px,1fr) auto;gap:12px;align-items:center;padding:9px;border-bottom:1px solid #e5ded3}
+.image-field-row:last-child{border-bottom:0}
+.image-field-row:nth-child(even){background:#f8f5ee}
+.image-field-row strong,.image-field-row small{display:block}
+.image-field-row small{margin-top:3px;color:#776d60;overflow-wrap:anywhere}
+.image-field-row input[type=text]{width:100%;min-width:0;padding:7px;border:1px solid #cfc8bc;background:#fff}
+.image-field-row label{white-space:nowrap}
+@media(max-width:650px){.image-field-row{grid-template-columns:1fr auto}.image-field-row>div{grid-column:1/-1}}
+@media print{.image-dialog{display:none!important}}
+
+
+.pc-photo-grid,#pcPhotosContent{display:flex;flex-wrap:wrap;gap:12px}.pc-photo{margin:0;max-width:220px}.pc-photo img{max-width:100%;max-height:220px;object-fit:contain}.pc-photo figcaption{text-align:center;font-size:13px}.review-factors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}#mobileReviewContent>label{display:block;margin:10px 0}#mobileReviewContent>label>input,#mobileReviewContent>label>select{display:block;width:100%;min-height:40px}#mobileImportDialog{max-width:min(95vw,1100px)}#mobileImportContent .table-scroll{max-height:52vh;overflow:auto}

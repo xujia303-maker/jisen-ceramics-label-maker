@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JISEN CERAMICS LABEL MAKER｜己森 日本の器</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="pricing.js" defer></script>
+  <script src="image-analysis.js" defer></script>
+  <script src="app.js" defer></script>
+  <script src="capture-core.js" defer></script>
+  <script src="mobile-store.js" defer></script>
+  <script src="vendor/jszip.min.js" defer></script>
+  <script src="transfer.js" defer></script>
+  <script src="import-rules.js" defer></script>
+  <script src="pc-import.js" defer></script>
+</head>
+<body>
+  <header class="topbar no-print">
+    <div><div class="eyebrow">己森 · 日本の器</div><h1>JISEN CERAMICS LABEL MAKER</h1><p>日本中古器物价签 · 本地制作与打印</p></div>
+    <nav><button id="editorTab" class="active">商品录入</button><button id="settingsTab">设置</button></nav>
+  </header>
+
+  <main class="workspace no-print" id="editorView">
+    <section class="editor-panel">
+      <div class="section-heading"><div><span class="eyebrow">01 / INVENTORY</span><h2>商品表格 <small id="itemCount"></small></h2></div><span id="saveStatus" role="status">本地自动保存</span></div>
+      <div class="toolbar">
+        <button id="addBtn" class="primary">＋ 添加商品</button><button id="copyLastBtn">复制上一项</button><button id="deleteSelectedBtn">删除所选</button><button id="reviewFilter">待老板审核</button><button id="importMobileBtn">导入手机批次 ZIP</button><input id="importMobileFile" type="file" accept=".zip,application/zip" hidden>
+      </div>
+      <p class="hint">每行一张价签。行内“复制”保留全部字段；“复制上一项”会清空 SKU 和价格。</p>
+      <div class="table-scroll"><table><thead><tr><th><input type="checkbox" id="selectAll" aria-label="选择全部"></th><th>模板</th><th>窑口</th><th>器型</th><th>年代</th><th>工艺（多选）</th><th>作家</th><th>附件</th><th>品相</th><th>SKU</th><th>价格 ¥</th><th>建议价</th><th>定价 / AI</th><th>操作</th></tr></thead><tbody id="itemRows"></tbody></table></div>
+      <div class="data-actions"><button id="saveBtn">保存</button><button id="exportBtn">导出 JSON</button><button id="pcZipBackup">导出完整 ZIP 备份</button><button id="pcZipRestore">恢复 ZIP 备份</button><input id="pcZipRestoreFile" type="file" accept=".zip,application/zip" hidden><button id="importBtn">导入 JSON</button><button id="clearBtn" class="danger">清空全部数据</button><input id="importFile" type="file" accept=".json,application/json" hidden></div>
+      <p class="small-note">数据只保存在此浏览器的 localStorage。建议定期导出 JSON 备份。</p>
+    </section>
+
+    <section class="preview-panel">
+      <div class="section-heading"><div><span class="eyebrow">02 / PRINT SHEET</span><h2>A4 实时预览</h2></div><span id="pageIndicator">第 1 / 1 页</span></div>
+      <div class="preview-controls"><button id="prevPage">← 上一页</button><button id="nextPage">下一页 →</button><label class="switch"><input id="cutLines" type="checkbox" checked>显示裁切线</label><label class="switch"><input id="currencySymbol" type="checkbox" checked>显示 ¥</label></div>
+      <div class="paper-viewport"><div id="screenPaper" class="paper"></div></div>
+      <button id="printBtn" class="primary print-button">打印 / 导出 PDF</button>
+      <div class="print-help"><strong>推荐打印设置</strong><p>A4 · 纵向 · 缩放 100% · 边距“无” · 开启背景图形 · 关闭浏览器页眉页脚。保存 PDF 时在打印目标中选择“另存为 PDF”。</p></div>
+    </section>
+  </main>
+
+  <main id="settingsView" class="settings-view no-print" hidden><div class="section-heading"><div><span class="eyebrow">03 / SETTINGS</span><h2>设置</h2></div><button id="backBtn">返回商品录入</button></div><p class="hint">修改选项后立即保存。已录入商品的原值不会被改写。</p><div id="settingsGroups" class="settings-grid"></div><div id="pricingSettings"></div></main>
+
+  <dialog id="pricingDialog" class="pricing-dialog no-print"><div class="dialog-head"><div><span class="eyebrow">JISEN CERAMICS PRICING ASSISTANT</span><h2 id="pricingTitle">辅助定价</h2></div><button id="closePricing" aria-label="关闭">×</button></div><div id="pricingContent"></div></dialog>
+  <dialog id="researchDialog" class="pricing-dialog research-dialog no-print"><div class="dialog-head"><div><span class="eyebrow">RESEARCH / INVESTIGATION</span><h2 id="researchTitle">AI 辅助调查</h2></div><button id="closeResearch" aria-label="关闭">×</button></div><div id="researchContent"></div></dialog>
+  <dialog id="imageDialog" class="pricing-dialog image-dialog no-print"><div class="dialog-head"><div><span class="eyebrow">IMAGE / HUMAN REVIEW</span><h2 id="imageTitle">图片分析</h2></div><button id="closeImage" aria-label="关闭">×</button></div><div id="imageContent"></div></dialog>
+  <dialog id="mobileImportDialog" class="pricing-dialog no-print"><div class="dialog-head"><h2>手机批次导入预览</h2><button id="closeMobileImport">×</button></div><div id="mobileImportContent"></div></dialog>
+  <dialog id="mobileReviewDialog" class="pricing-dialog no-print"><div class="dialog-head"><h2 id="mobileReviewTitle">老板审核</h2><button id="closeMobileReview">×</button></div><div id="mobileReviewContent"></div></dialog>
+  <dialog id="pcPhotosDialog" class="pricing-dialog no-print"><div class="dialog-head"><h2>商品照片</h2><button id="closePcPhotos">×</button></div><div id="pcPhotosContent"></div></dialog>
+
+  <div id="printPages" class="print-pages" aria-hidden="true"></div>
+</body>
+</html>

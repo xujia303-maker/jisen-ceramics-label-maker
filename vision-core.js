@@ -36,6 +36,7 @@
   function normalizeVision(raw){const result=copy(validate(raw,VISION_SCHEMA));
     for(const field of [result.objectType,result.itemType,result.kilnAssessment])if(field.confidence<40||!known(field.value))field.value="不明";
     if(result.periodAssessment.confidence<40)result.periodAssessment.value="无法判断";
+    for(const record of [result.markAssessment,result.boxAssessment])if(record.confidence<40)for(const key of ["readableText","possibleArtist","possibleStudio","possibleKiln","possibleItemName"])if(key in record)record[key]="不明";
     const direct=[result.markAssessment,result.boxAssessment].some(v=>v.found&&known(v.readableText)&&v.confidence>=85);
     if(result.recommendedConfidence==="A_CONFIRMED"&&!direct){result.recommendedConfidence="C_STYLE";result.uncertainties.push("缺少清晰可读的直接身份凭据，建议等级已降为风格判断");}
     if(result.kilnAssessment.level==="STYLE"||result.recommendedConfidence==="C_STYLE")result.kilnAssessment.level="STYLE";
